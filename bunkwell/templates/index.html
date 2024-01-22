@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracker</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <style>
+        h1{
+            text-align: center;
+        }
+      h2 {
+        margin-top: 40px;
+      }
+      
+     
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }</style>
+    <h1>Bunk Sincerely</h1>
+    <p style="text-align: center;"> Total Attendance percent: {{ (data["Maths"]+data["Data structure"]+data["Python"]+data["CO"])/4 }}%</p>
+    <h2>Maths</h2>
+    <form action="/update" method="post">
+        <p> Attendance percent: <b>{{ data["Maths"] }}%</b></p>
+        <label for="absent">Are you absent today?</label>
+        <input type="submit" value="Yes, I am absent" id="absent" name="absent">
+    </form>
+    
+<h2>Data structure</h2>
+<form action="/update2" method="post">
+    <p> Attendance percent: <b>{{ data["Data structure"] }}%</b></p>
+    <label for="absent2">Are you absent today?</label>
+    <input type="submit" value="Yes, I am absent" id="absent2" name="absent2">
+</form>
+
+<h2>CO</h2>
+<form action="/update3" method="post">
+    <p> Attendance percent: <b>{{ data["CO"] }}%</b></p>
+    <label for="absent3">Are you absent today?</label>
+    <input type="submit" value="Yes, I am absent" id="absent3" name="absent3">
+</form>
+
+<h2>Python</h2>
+<form action="/update4" method="post">
+    <p> Attendance percent: <b>{{ data["Python"] }}%</b></p>
+    <label for="absent4">Are you absent today?</label>
+    <input type="submit" value="Yes, I am absent" id="absent4" name="absent4">
+</form>
+
+</body>
+</html>
